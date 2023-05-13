@@ -14,6 +14,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.creator.apps.CreatorConfig',
     'core.apps.business.apps.BusinessConfig',
+    'core.apps.user.apps.UserConfig',
+    'core.apps.home.apps.HomeConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -28,6 +31,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.project.urls'
 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "core/db.sqlite3", # type: ignore
+    }
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -46,6 +55,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.project.wsgi.application'
 
+AUTH_USER_MODEL = 'user.KollabUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

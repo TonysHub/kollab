@@ -13,6 +13,7 @@ psycopg2-binary = "^2.9.6"
 django-filter = "^23.1"
 flake8 = "^6.0.0"
 django-split-settings = "^1.2.0"
+pillow = "^9.5.0"
 
 
 [build-system]

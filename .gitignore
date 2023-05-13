@@ -8,6 +8,7 @@ media
 images
 settings.py
 settings.dev.py
+migrations/
 
 # Backup files
 *.bak

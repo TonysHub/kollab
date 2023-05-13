@@ -18,4 +18,7 @@ superuser:
 startapp:
 	poetry run python3 -m core.manage startapp $(name) $(path)
 
+shell:
+	poetry run python3 -m core.manage shell
+
 update: install migrate ; @echo "Update complete!"
