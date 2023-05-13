@@ -11,5 +11,5 @@ from django.shortcuts import render
 #         return Creator.objects.order_by('-pub_date')[:5]
 
 
-def index(request):
-    return render(request, 'business/index.html')
+def BusinessHome(request):
+    return render(request, 'business/business_home.html')

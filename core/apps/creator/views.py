@@ -3,5 +3,5 @@ from django.conf import settings
 
 
 
-def index(request):
-    return render(request, 'creator/index.html')
+def CreatorHome(request):
+    return render(request, 'creator/creator_home.html')

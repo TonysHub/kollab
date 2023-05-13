@@ -16,6 +16,8 @@ class KollabUser(AbstractUser):
     
     id = models.AutoField(primary_key=True)
     base_role = Role.CREATOR
+    username = models.CharField(max_length=25, unique=True)
+    password = models.CharField(max_length=25, verbose_name='password')
     role = models.CharField(max_length=50, choices=Role.choices)
     creator_id = models.ForeignKey(KollabCreator, on_delete=models.CASCADE, null=True, blank=True)
     business_id = models.ForeignKey(KollabBusiness, on_delete=models.CASCADE, null=True, blank=True)
@@ -24,11 +26,11 @@ class KollabUser(AbstractUser):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
-    phone = models.CharField(max_length=20)
-    address = models.CharField(max_length=100)
-    city = models.CharField(max_length=100)
-    country = models.CharField(max_length=100)
-    postal_code = models.CharField(max_length=20)
+    # phone = models.CharField(max_length=20)
+    # address = models.CharField(max_length=100)
+    # city = models.CharField(max_length=100)
+    # country = models.CharField(max_length=100)
+    # postal_code = models.CharField(max_length=20)
     is_active = models.BooleanField(default=True)
 
 
