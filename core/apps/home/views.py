@@ -1,9 +1,6 @@
 from django.views import generic
-from django.urls import reverse_lazy, reverse
-from .forms import SignUpForm, LoginForm
-from django.contrib.auth import authenticate, login
-from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
+from django.urls import reverse_lazy
+from .forms import SignUpForm
 
 
 class HomeView(generic.TemplateView):
