@@ -15,4 +15,3 @@ class SignUpForm(UserCreationForm):
 class LoginForm(AuthenticationForm):
     username = forms.CharField(max_length=25, required=True)
     password = forms.PasswordInput()
-
