@@ -22,3 +22,5 @@ shell:
 	poetry run python3 -m core.manage shell
 
 update: install migrate ; @echo "Update complete!"
+
+
