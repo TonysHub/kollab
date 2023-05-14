@@ -4,6 +4,8 @@ version = "0.1.0"
 description = ""
 authors = ["Tony Lee <43350428+TonysHub@users.noreply.github.com>"]
 readme = "README.md"
+license = "MIT"
+
 
 [tool.poetry.dependencies]
 python = "^3.11"

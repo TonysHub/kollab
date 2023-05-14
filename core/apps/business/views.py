@@ -12,4 +12,4 @@ from django.shortcuts import render
 
 
 def BusinessHome(request):
-    return render(request, 'business/business_home.html')
+    return render(request, "business/business_home.html")
