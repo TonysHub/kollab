@@ -4,18 +4,19 @@ from core.apps.creator.models import KollabCreator
 
 
 class KollabBusiness(models.Model):
+    id = models.AutoField(primary_key=True)
     class Meta:
         db_table = 'kollab_business'
         verbose_name = 'Kollab Business'
         verbose_name_plural = 'Kollab Businesses'
 
 
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100)
+
+    # name = models.CharField(max_length=100)
     # campaign_id = models.ForeignKey('KollabCampaign', on_delete=models.CASCADE)
     # tier_id = models.ForeignKey('KollabTier', on_delete=models.CASCADE)
-    logo = models.ImageField(upload_to='business/logos')
-    cover = models.ImageField(upload_to='business/covers')
+    # logo = models.ImageField(upload_to='business/logos')
+    # cover = models.ImageField(upload_to='business/covers')
 
 
 # class KollabCampaign(models.Model):
@@ -51,8 +52,7 @@ class KollabBusiness(models.Model):
 #         verbose_name_plural = 'Kollab Tiers'
 
 
-    id = models.AutoField(primary_key=True)
-    tier = models.CharField(max_length=100)
+    # tier = models.CharField(max_length=100, default='free')
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name

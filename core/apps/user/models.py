@@ -15,14 +15,13 @@ class KollabUser(AbstractUser):
         BUSINESS = "BUSINESS", 'business'
     
     id = models.AutoField(primary_key=True)
-    base_role = Role.CREATOR
     username = models.CharField(max_length=25, unique=True)
     password = models.CharField(max_length=25, verbose_name='password')
     role = models.CharField(max_length=50, choices=Role.choices)
-    creator_id = models.ForeignKey(KollabCreator, on_delete=models.CASCADE, null=True, blank=True)
-    business_id = models.ForeignKey(KollabBusiness, on_delete=models.CASCADE, null=True, blank=True)
+    creator = models.ForeignKey(KollabCreator, on_delete=models.CASCADE, null=True, blank=True)
+    business = models.ForeignKey(KollabBusiness, on_delete=models.CASCADE, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
-    deleted = models.DateTimeField(auto_now=True)
+    deleted = models.DateTimeField(null=True, blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -35,14 +34,12 @@ class KollabUser(AbstractUser):
 
 
     def save(self, *args, **kwargs):
-        if not self.role:
-            self.role = self.base_role
+        if self.role == self.Role.CREATOR:
+            self.creator = KollabCreator.objects.create()
+        elif self.role == self.Role.BUSINESS:
+            self.business = KollabBusiness.objects.create()
         super().save(*args, **kwargs)
 
-class KollabBusiness(KollabUser):
-    class Meta:
-        proxy = True
 
-    base_role = KollabUser.Role.BUSINESS
     
 
