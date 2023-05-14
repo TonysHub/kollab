@@ -28,7 +28,9 @@ class LoginView(generic.TemplateView):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse("home:success"))
+                return HttpResponseRedirect(
+                    reverse("home:success", kwargs={"user": user})
+                )
             else:
                 return HttpResponse("Inactive user.")
         else:

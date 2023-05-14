@@ -29,7 +29,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "core.project.urls"
 
 DATABASES = {
     "default": {
@@ -80,8 +79,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = "static/"
 
 STATIC_ROOT = BASE_DIR / "core/static"  # type: ignore
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# URLS
+LOGIN_REDIRECT_URL = "/"
+STATIC_URL = "static/"
+ROOT_URLCONF = "core.project.urls"

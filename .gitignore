@@ -11,7 +11,6 @@ settings.dev.py
 migrations/
 
 
-
 # Backup files
 *.bak
 

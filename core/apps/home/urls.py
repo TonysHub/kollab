@@ -1,10 +1,13 @@
 from django.urls import path
-from . import views
+from .views import HomeView, SignUpView, LoginView, SuccessView
+from django.contrib.auth.decorators import login_required
+
 
 app_name = "home"
+
 urlpatterns = [
-    path("", views.HomeView.as_view(), name="home"),
-    path("signup/", views.SignUpView.as_view(), name="signup"),
-    path("login/", views.LoginView.as_view(), name="login"),
-    path("success/", views.SuccessView.as_view(), name="success"),
+    path("", HomeView.as_view(), name="home"),
+    path("signup/", SignUpView.as_view(), name="signup"),
+    path("login/", LoginView.as_view(), name="login"),
+    path("success/", login_required(SuccessView.as_view()), name="success"),
 ]
