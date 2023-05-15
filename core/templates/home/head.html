@@ -1,3 +1,4 @@
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -5,5 +6,6 @@
     <title>AppName</title>
     <!-- tailwind css CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="kollab/core/static/main.scss">
+    <!-- stylesheet link error not fixed. Need to check if custom.py is reading the static folder properly -->
+    <link rel="stylesheet" href="{% static 'static/css/main.css' %}">
 </head>
