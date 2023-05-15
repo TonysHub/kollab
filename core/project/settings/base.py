@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     "core.apps.business.apps.BusinessConfig",
     "core.apps.user.apps.UserConfig",
     "core.apps.home.apps.HomeConfig",
+    "core.apps.campaign.apps.CampaignConfig",
     "rest_framework",
 ]
 
