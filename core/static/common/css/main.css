@@ -17,9 +17,9 @@ a {
      -moz-appearance: unset;
           appearance: unset;
 }
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 ul {
   list-style: none;
