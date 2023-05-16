@@ -30,10 +30,8 @@ class KollabUser(AbstractUser):
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
     is_active = models.BooleanField(default=True)
-    user_thumbnail = models.ImageField(
-        upload_to="user/thumbnails", blank=True, null=True
-    )
-    user_thumbnail_url = models.CharField(
+    profile_image = models.ImageField(upload_to="user/profile", blank=True, null=True)
+    profile_image_url = models.CharField(
         max_length=255, default="https://via.placeholder.com/150"
     )
 
@@ -44,8 +42,8 @@ class KollabUser(AbstractUser):
         elif self.role == self.Role.BUSINESS:
             self.business = KollabBusiness.objects.create()
 
-        if not self.user_thumbnail and not self.user_thumbnail_url:
-            self.user_thumbnail_url = "https://via.placeholder.com/150"  # Default value if no thumbnail is set
+        if not self.profile_image and not self.profile_image_url:
+            self.profile_image_url = "https://via.placeholder.com/150"  # Default value if no thumbnail is set
         else:
-            self.user_thumbnail_url = self.campaign_thumbnail.url
+            self.profile_image_url = self.profile_image.url
         super().save(*args, **kwargs)
