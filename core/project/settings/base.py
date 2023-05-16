@@ -81,8 +81,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_ROOT = BASE_DIR / "/static/"  # type: ignore
-STATICFILES_DIRS = (BASE_DIR / 'static')  # type: ignore
+STATIC_ROOT = "/static/"  
+STATICFILES_DIRS = (
+    (BASE_DIR / 'static'), # type: ignore
+)  
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
