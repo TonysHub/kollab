@@ -81,11 +81,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_ROOT = "/static/"  
-STATICFILES_DIRS = (
-    (BASE_DIR / 'static'), # type: ignore
-)  
+STATIC_ROOT = "/static/"
+STATICFILES_DIRS = ((BASE_DIR / "core/static"),)  # type: ignore
 
+MEDIA_ROOT = BASE_DIR / "core/media"  # type: ignore
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -93,4 +92,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # URLS
 LOGIN_REDIRECT_URL = "/"
 STATIC_URL = "/static/"
+MEDIA_URL = "/media/"
 ROOT_URLCONF = "core.project.urls"
