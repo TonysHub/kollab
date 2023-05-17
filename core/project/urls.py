@@ -10,6 +10,6 @@ urlpatterns = [
     path("creator/", include("core.apps.creator.urls")),
     path("business/", include("core.apps.business.urls")),
     path("campaign/", include("core.apps.campaign.urls")),
-    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("core.apps.user.urls")),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
