@@ -10,7 +10,7 @@ class CampaignCreateForm(forms.ModelForm):
     class Meta:
         model = KollabCampaign
         exclude = [
-            "business",
+            "business_id",
             "is_active",
             "created_at",
             "updated_at",
