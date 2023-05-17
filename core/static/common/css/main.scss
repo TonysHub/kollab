@@ -1,21 +1,658 @@
 // css normalization
-@use 'reset.scss';
+@use 'reset.css';
 
-/* color style */
-$white-100 : #f8fafc;
-$white-80 : #F3F4F7;
-$white-60 : #DADDE7;
-$white-40 : #C1C6D7;
-$white-20 : #B4BBCF;
+// 내장 색상 모듈 호출
+@use 'sass:color';
 
-$black-100 : #17181C;
-$black-80 : #25262D;
-$black-60 : #373843;
-$black-40 : #65687B;
-$black-20 : #9BA5B9;
+/* color styles */
+$gray-50: #f8fafc;
+$gray-100: #f1f5f9;
+$gray-200: #e2e8f0;
+$gray-300: #cbd5e1;
+$gray-400: #94a3b8;
+$gray-500: #64748b;
+$gray-600: #475569;
+$gray-700: #334155;
+$gray-800: #1e293b;
+$gray-900: #0f172a;
 
-$blue-100 : #114592;
-$blue-80 : #1A67DB;
-$blue-60 : #3079E7;
-$blue-40 : #6DA1EE;
-$blue-20 : #A4C4F4;
+$red-50: #FDF2F2;
+$red-100: #FDE8E8;
+$red-200: #FBD5D5;
+$red-300: #F8B4B4;
+$red-400: #F98080;
+$red-500: #F05252;
+$red-600: #E02424;
+$red-700: #C81E1E;
+$red-800: #9B1C1C;
+$red-900: #771D1D;
+
+$blue-50: #EBF5FF;
+$blue-100: #E1EFFE;
+$blue-200: #C3DDFD;
+$blue-300: #A4CAFE;
+$blue-400: #76A9FA;
+$blue-500: #3F83F8;
+$blue-600: #1C64F2;
+$blue-700: #1A56DB;
+$blue-800: #1E429F;
+$blue-900: #233876;
+
+$green-50: #F3FAF7;
+$green-100: #DEF7EC;
+$green-200: #BCF0DA;
+$green-300: #84E1BC;
+$green-400: #31C48D;
+$green-500: #0E9F6E;
+$green-600: #057A55;
+$green-700: #046C4E;
+$green-800: #03543F;
+$green-900: #014737;
+
+$yellow-50: #fffbeb;
+$yellow-100: #fef3c7;
+$yellow-200: #fde68a;
+$yellow-300: #fcd34d;
+$yellow-400: #fbbf24;
+$yellow-500: #f59e0b;
+$yellow-600: #d97706;
+$yellow-700: #b45309;
+$yellow-800: #92400e;
+$yellow-900: #78350f;
+
+
+.gray-50 {
+    color: #f8fafc;
+}
+.gray-100 {
+    color: #f1f5f9;;
+}
+.gray-200 {
+    color: #e2e8f0;;
+}
+.gray-300 { 
+    color: #cbd5e1;;
+}
+.gray-400 {
+    color: #94a3b8;;
+}
+.gray-500 {
+    color: #64748b;
+}
+.gray-600 {
+    color: #475569;;
+}
+.gray-700 {
+    color: #334155;;
+}
+.gray-800 {
+    color: #1e293b;;
+}
+.gray-900 {
+    color: #0f172a;;
+}
+
+.red-50 {
+    color: #FDF2F2;;
+}
+.red-100 {
+    color: #FDE8E8;;
+}
+.red-200 {
+    color: #FBD5D5;;
+}
+.red-300 {
+    color: #F8B4B4;;
+}
+.red-400 {
+    color: #F98080;;
+}
+.red-500 {
+    color: #F05252;
+}
+.red-600 {
+    color: #E02424;
+}
+.red-700 {
+    color: #C81E1E;
+}
+.red-800 {
+    color: #9B1C1C;
+}
+.red-900 {
+    color: #771D1D;
+}
+
+.blue-50 {
+    color: #EBF5FF;
+}
+.blue-100 {
+    color: #E1EFFE;
+}
+.blue-200 {
+    color: #C3DDFD;
+}
+.blue-300 {
+    color: #A4CAFE;
+}
+.blue-400 {
+    color: #76A9FA;
+}
+.blue-500 {
+    color: #3F83F8;
+}
+.blue-600 {
+    color: #1C64F2;
+}
+.blue-700 {
+    color: #1A56DB;
+}
+.blue-800 {
+    color: #1E429F;
+}
+.blue-900 {
+    color: #233876;
+}
+
+:root {
+    --radius-s: 4px;
+    --radius-m: 8px;
+    --radius-l: 16px;
+    --radius-xl: 20px;
+    --radius-xxl: 24px
+}
+
+// border radius
+.radius--s {
+    border-radius: 4px;
+    border-radius: var(--radius-s)
+}
+
+.radius--m {
+    border-radius: 8px;
+    border-radius: var(--radius-m)
+}
+
+.radius--l {
+    border-radius: 16px;
+    border-radius: var(--radius-l)
+}
+
+.radius--xl {
+    border-radius: 20px;
+    border-radius: var(--radius-xl)
+}
+
+.radius--xxl {
+    border-radius: 24px;
+    border-radius: var(--radius-xxl)
+}
+
+
+
+/* typography styles */
+:root {
+    --line-height-base: 1.6;
+    --line-height-adjust: 1.3;
+    --font-size-h1: 56px;
+    --font-size-h2: 48px;
+    --font-size-h3: 36px;
+    --font-size-h4: 32px;
+    --font-size-h5: 24px;
+    --font-size-h6: 20px;
+    --font-size-h7: 17px;
+    --font-size-p: 15px;
+    --font-size-sm: 13px;
+    --font-size-small: 13px;
+    --font-size-xsmall: 11px;
+    --font-weight-bold: bold;
+    --font-weight-semibold: 600;
+    --font-weight-medium: 500;
+    --font-weight-regular: normal
+}
+
+.text {
+    margin: 0;
+    padding: 0;
+}
+
+.text--t1 {
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.3;
+}
+
+.text--t2 {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.3;
+}
+
+.text--t3 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.3;
+}
+
+.text--h1 {
+    font-size: 56px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--h2 {
+    font-size: 48px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--h3 {
+    font-size: 36px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--h4 {
+    font-size: 32px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--h5 {
+    font-size: 24px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--h6 {
+    font-size: 20px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--h7 {
+    font-size: 17px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--p {
+    font-size: 15px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--small {
+    font-size: 13px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--xsmall {
+    font-size: 11px;
+    letter-spacing: -0.03em;
+    line-height: 1.6;
+}
+
+.text--left {
+    text-align: left
+}
+
+.text--right {
+    text-align: right
+}
+
+.text--center {
+    text-align: center
+}
+
+.text--justify {
+    text-align: justify
+}
+
+.text--bold {
+    font-weight: 700;
+}
+
+.text--semibold {
+    font-weight: 600;
+}
+
+.text--medium {
+    font-weight: 500;
+}
+
+.text--regular {
+    font-weight: 400;
+}
+
+// layout styles
+
+.flex-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+//container styles
+.wrapbox {
+    width: 100%;
+}
+
+.container--50 {
+    width: 50%;
+    height: fit-content;
+    margin: auto;
+}
+
+.container--100 {
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+}
+
+.container--600 {
+    width: 100%;
+    max-width: 600px;
+    height: fit-content;
+    margin: auto;
+    
+}
+
+.container--700 {
+    width: 100%;
+    max-width: 700px;
+    height: fit-content;
+    margin: auto;
+    
+}
+
+.container--1000 {
+    width: 100%;
+    max-width: 1000px;
+    height: fit-content;
+    margin: auto;
+}
+
+.container--max {
+    width: 100%;
+    max-width: 1280px;
+    height: fit-content;
+    margin: auto;
+}
+
+// layout styles
+.section--header {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.section--body {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+
+// divider styles
+.spacer--20 {
+    height: 20px;
+}
+
+.spacer--40 {
+    height: 40px;
+}
+
+.spacer--60 {
+    height: 60px;
+}
+
+.spacer--80 {
+    height: 80px;
+}
+
+.spacer--100 {
+    height: 100px;
+}
+
+.spacer--120 {
+    height: 120px;
+}
+
+.spacer--150 {
+    height: 150px;
+}
+
+.spacer--180 {
+    height: 180px;
+}
+
+.spacer--200 {
+    height: 200px;
+}
+
+// button styles
+// main btn into @mixin
+@mixin btn-fill($bgcolor) {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 8px;
+    background-color: $bgcolor;    
+
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 4px;
+    transition: background-color .25s;
+
+    &:hover {
+        background-color: color.scale($bgcolor, $blackness: 20%);
+        cursor: pointer;
+
+        a {
+            color: $gray-50;
+        }
+    }
+
+    &:disabled {
+        background-color: color.scale($bgcolor, $lightness: 50%);
+        cursor: not-allowed;
+    }
+}
+
+@mixin btn-text($textcolor) {
+    width: fit-content;
+    height: fit-content;
+    color: $textcolor;
+    text-decoration: underline;
+    
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 4px;
+    transition: background-color .25s;
+
+    &:hover {
+        color: color.scale($textcolor, $blackness: 20%);
+        cursor: pointer;
+    }
+
+    &:disabled {
+        color: color.scale($textcolor, $lightness: 50%);
+        cursor: not-allowed;
+    }
+}
+
+.btn--fill--primary--s {
+    @include btn-fill($blue-600);
+    padding: 7px 18px;
+}
+
+.btn--fill--primary--m {
+    @include btn-fill($blue-600);
+    padding: 10px 25px;
+}
+
+.btn--fill--primary--l {
+    @include btn-fill($blue-600);
+    padding: 14px 36px;
+}
+
+.btn--fill--primary--cta {
+    @include btn-fill($blue-600);
+    padding: 20px 50px;
+}
+
+.btn--text--primary {
+    @include btn-text($blue-600);
+}
+
+.btn--text--secondary {
+    @include btn-text($gray-600);
+}
+
+
+
+// input styles
+.input--field {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+
+@mixin field {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid $gray-300;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid $blue-400;
+    }
+
+    &:focus {
+        border: 2px solid $blue-600;
+        color: $gray-800;
+    }
+
+    &:valid {
+        color: $gray-800;
+    }
+
+    ::placeholder {
+        color: $gray-300;
+        font-size: 20px;
+        letter-spacing: -0.03em;
+        line-height: 1.6;
+    }
+}
+
+.field--s {
+    @include field;
+    height: 40px;
+    padding: 4px 20px;
+}
+
+.field--m {
+    @include field;
+    height: 48px;
+    padding: 8px 20px;
+}
+
+.field--l {
+    @include field;
+    height: 54px;
+    padding: 10px 20px;
+}
+
+
+
+// header styling
+.topnavbar {
+    width: 100%;
+    height: 60px;
+    padding: 5px 0px;
+
+    background-color: #ffffff;
+    border-bottom: 1px solid $gray-200;
+}
+
+.navbar-container {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+}
+
+.navbar-inner-container {
+    width: 100%;
+    padding: 0px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbar-logo-container {
+    width: 50px;
+    height: 50px;
+    align-content: center;
+}
+
+.logobox {
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+    display: block;
+}
+
+.navbar-menu {
+    width: max-content;
+    height: 50px;
+    display: flex;
+    flex-grow: 1;
+    gap: 16px;
+    align-items: center;
+}
+
+.navbar-content {
+    width: fit-content;
+    height: 50px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.navbar-item {
+    width: fit-content;
+    height: 44px;
+    display: flex;
+    align-items: center;
+
+    a {
+        width: fit-content;
+        padding: 12px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $gray-200;
+        }
+    }
+}
+
+
+.section__hero {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 80px ;
+}

@@ -83,7 +83,7 @@ USE_TZ = True
 
 STATIC_ROOT = "/static/"  
 STATICFILES_DIRS = (
-    (BASE_DIR / 'static'), # type: ignore
+    (BASE_DIR / 'core/static'), # type: ignore
 )  
 
 

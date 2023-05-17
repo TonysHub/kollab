@@ -1,10 +1,31 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
+<div class="container--600">
+  <div class="spacer--80"></div>
+  <div class="section--header">
+    <div class="text--h3 text--bold gray-900">Sign up</div>
+  </div>
+  <div class="section--body">
+    <form method="post">
+      {% csrf_token %}
+
+      {% for field in form %}
+      <div class="input--field">
+        <p class="text--h7 text--medium gray-700">{{ field.label_tag }}</p> 
+        {{ field }}
+        {% if field.errors %}
+          {% for error in field.errors %}
+          <p class="text--h7 text--medium red-600">{{ error }}</p>
+          {% endfor %}
+        {% endif %}
+      </div>
+      {% endfor %}
+
+      <button class="btn--fill--primary--l" id="signup_submit" type="submit">
+        <p class="text--h7 text--medium gray-50">signup</p>
+      </button>
+    </form>
+  </div>
+</div>
 {% endblock %}

@@ -1,12 +1,14 @@
 {% extends "home/base.html" %}
 {% block content%}
-<div class="w-full py-56 items-center justify-between p-4 lg:px-8 overflow-hidden">
-    <div class="mx-auto max-w-7xl">
-        <h2 class="text-5xl font-bold text-center tracking-tight text-black sm:text-8xl">Boost your productivity.</h2>
-        <p class="mt-6 text-lg text-center leading-8 text-gray-600">Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.</p>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
-      <a href="#" class="px-8 py-4 rounded-lg bg-blue-600 text-xl font-medium leading-6 text-slate-50 hover:bg-blue-800">Get started</a>
-    </div>
-    </div>
+<div class="container--max">
+  <div class="section__hero">
+      <h1 class="text--t1 text--bold text--center gray-900">Boost your productivity.</h1>
+      <div class="spacer--40"></div>
+      <p class="text--h6 text--medium text--center gray-500">Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.</p>
+      <div class="spacer--80"></div>
+    <button class="btn--fill--primary--cta">
+      <p class="text--h6 text--medium gray-50">Get started</p>
+    </button>
+  </div>
 </div>
 {% endblock %}

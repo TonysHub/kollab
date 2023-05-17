@@ -4,39 +4,41 @@
   {% include 'home/head.html' %}
 </head>
 <body>
-
-  <header class="bg-white border-b border-solid border-gray-200">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8" aria-label="Global">
-    <div class="flex gap-x-10">
-      <div class="flex lg:flex flex-shrink items-center">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-        </a>
-      </div>
-      <div class="flex lg:flex-1 lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-          <span class="sr-only">Open main menu</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
-      </div>
-        <div class="hidden lg:flex lg:gap-x-4">
-          <a href="#" class="px-6 py-3 rounded-lg text-md font-normal leading-6 text-gray-700 hover:bg-gray-200">Foo</a>
-          <a href="#" class="px-6 py-3 rounded-lg text-md font-normal leading-6 text-gray-700 hover:bg-gray-200">Faa</a>
-          <a href="#" class="px-6 py-3 rounded-lg text-md font-normal leading-6 text-gray-700 hover:bg-gray-200">Boo</a>
+<header>
+  <nav class="topnavbar">
+    <div class="navbar-container">
+      <div class="navbar-inner-container">
+        <div class="navbar-logo-container">
+          <a class="logobox" href="{% url 'home:home' %}">
+            <img src="static/common/img/icon_disc.svg" alt="Logo" width="48" height="48">
+          </a>
         </div>
-    </div>  
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-x-4">
-        {% if user.is_authenticated %}
-        <a href="{% url 'home:signup' %}" class="px-6 py-3 rounded-lg bg-blue-600 text-md font-medium leading-6 text-blue-600 hover:underline">User: {{ user.get_username }}</a>
-        <a href="{% url 'logout' %}?next={{ request.path }}" class="px-6 py-3 rounded-lg bg-blue-600 text-md font-medium leading-6 text-slate-50 hover:bg-blue-800">Logout</a>
-        {% else %}
-        <a href="{% url 'home:signup' %}" class="px-6 py-3 rounded-lg text-md font-normal leading-6 text-blue-600 hover:underline">Signup</a>
-        <a href="{% url 'login' %}?next={{ request.path }}" class="px-6 py-3 rounded-lg bg-blue-600 text-md font-medium leading-6 text-slate-50 hover:bg-blue-800">Login <span aria-hidden="true">&rarr;</span></a>
-        {% endif %}
+  
+        <div class="navbar-menu">
+          <li class="navbar-item">
+            <a href="{% url 'campaign-home' %}" class="text--h7 text--medium gray--700">Campaign</a>
+          </li>
+        </div>
+
+        <div class="navbar-content">
+          {% if user.is_authenticated %}
+          <li class="navbar-item">
+            <a href="#" class="text--h7 text--medium gray--700">User: {{ user.get_username }}</a>
+          </li>
+          <button class="btn--fill--primary--m">
+            <a href="{% url 'logout' %}?next={{ request.path }}" class="text--h7 text--medium gray-50">Logout</a>
+          </button>
+          {% else %}
+          <li class="navbar-item">
+            <a href="{% url 'home:signup' %}" class="text--h7 text--medium gray--700">Sign up</a>
+          </li>
+          <button class="btn--fill--primary--m">
+            <a href="{% url 'login' %}?next={{ request.path }}" class="text--h7 text--medium gray-50" role="button">Login</a>
+          </button>
+          {% endif %}
+        </div>
       </div>
+    </div>
   </nav>
 </header>
 

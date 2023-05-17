@@ -16,12 +16,15 @@ a {
   -webkit-appearance: unset;
      -moz-appearance: unset;
           appearance: unset;
-}
-a:hover {
-  text-decoration: underline;
+          color: unset;
 }
 
-ul {
+a:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+ul,li {
   list-style: none;
 }
 
@@ -57,12 +60,24 @@ td, th {
   padding: 0;
 }
 
-body {
-  font-family: "pretendard";
-  letter-spacing: -0.02em;
-  line-height: 1.2em;
+body,html {
+  font-family: pretendard,-apple-system,BlinkMacSystemFont,Bazier Square,Noto Sans KR,Segoe UI,Apple SD Gothic Neo,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   word-break: keep-all;
-  background-color: #ecedf0;
+  word-wrap: break-word;
+}
+
+*,:after,:before {
+  box-sizing: border-box
+}
+
+button:disabled,input:disabled {
+  cursor: not-allowed
+}
+
+button,input,textarea {
+  font-family: pretendard,-apple-system,BlinkMacSystemFont,Bazier Square,Noto Sans KR,Segoe UI,Apple SD Gothic Neo,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 div, section {
