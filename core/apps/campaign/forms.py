@@ -1,8 +1,9 @@
 from core.apps.campaign.models import KollabCampaign
-from core.apps.user.models import KollabUser
 from django import forms
-from django.contrib import auth
 
+
+class DateInput(forms.DateInput):
+    input_type = "date"
 
 
 class CampaignCreateForm(forms.ModelForm):

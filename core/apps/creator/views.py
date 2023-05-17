@@ -1,5 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
-
-def CreatorHome(request):
-    return render(request, "creator/creator_home.html")
+class CreatorHome(TemplateView):
+    template_name = "creator/creator_home.html"
