@@ -1,10 +1,63 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-  <h2>Register Campaign</h2>
-  <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-  </form>
+  <div class="container--600">
+    <div class="spacer--80"></div>
+    <div class="section--header">
+      <div class="text--h2 text--bold gray-900">Register Campaign</div>
+    </div>
+    <div class="section--body">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+  
+        <div class="input--field">
+          <p class="text--h7 text--medium gray-700">Campaign name</p>
+          <input class="field--l" type="text" name="name" placeholder="Enter campaign name" required>
+          <p class="text--h7 text--medium red-500">{{ form.name.errors }}</p>
+        </div>
+
+        <div class="input--field">
+          <p class="text--h7 text--medium gray-700">Campaign description</p>
+          <textarea class="field--textarea" type="text" name="description" placeholder="Briefly describe your campaign (up to 300 characters)" maxlength="300" required></textarea>
+          <p class="text--h7 text--medium red-500">{{ form.description.errors }}</p>
+        </div>
+        
+        <div class="input__col-2">
+          <div class="input--field col--2">
+            <p class="text--h7 text--medium gray-700">Starting date</p>
+            <input class="field--l" type="date" name="start_date" placeholder="Select starting date" required>
+            <p class="text--h7 text--medium red-500">{{ form.start_date.errors }}</p>
+          </div>
+    
+          <div class="input--field col--2">
+            <p class="text--h7 text--medium gray-700">End date</p>
+            <input class="field--l" type="date" name="end_date" placeholder="Select end date" required>
+            <p class="text--h7 text--medium red-500">{{ form.end_date.errors }}</p>
+          </div>
+        </div>
+  
+        <div class="input--field">
+          <p class="text--h7 text--medium gray-700">Bidding amount</p>
+          <input class="field--l" type="number" name="bid" placeholder="Select bidding amount" required min="0" max="999999">
+          <p class="text--h7 text--medium red-500">{{ form.bid.errors }}</p>
+        </div>
+  
+        <div class="input--field">
+          <p class="text--h7 text--medium gray-700">Campaign thumbnail</p>
+          <input class="field--l" type="file" accept="image/*" name="campaign_thumbnail" placeholder="Click to upload image">
+          <p class="text--h7 text--medium red-500">{{ form.campaign_thumbnail.errors }}</p>
+        </div>
+  
+        <div class="input--field">
+          <p class="text--h7 text--medium gray-700">Category</p>
+          <input class="field--l" type="text" name="category" placeholder="Enter category of campaign" required>
+          <p class="text--h7 text--medium red-500">{{ form.category.errors }}</p>
+        </div>
+        
+        <button class="btn--fill--primary--l" id="campaignCreate_submit" type="submit">
+          <p class="text--h7 text--medium gray-50">Register</p>
+        </button>
+      </form>
+    </div>
+  </div>
 {% endblock %}

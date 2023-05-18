@@ -746,6 +746,41 @@ input[type=file]::file-selector-button {
   line-height: 1.6;
 }
 
+.field--textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  height: 100px;
+  min-height: 100px;
+  max-height: 150px;
+  padding: 10px 20px;
+}
+.field--textarea:hover {
+  border: 2px solid #76A9FA;
+}
+.field--textarea:focus {
+  border: 2px solid #1C64F2;
+  color: #1e293b;
+}
+.field--textarea:valid {
+  color: #1e293b;
+}
+.field--textarea ::-moz-placeholder {
+  color: #e2e8f0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.6;
+}
+.field--textarea ::placeholder {
+  color: #e2e8f0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.6;
+}
+
 .col--2 {
   width: 50%;
   height: -moz-fit-content;

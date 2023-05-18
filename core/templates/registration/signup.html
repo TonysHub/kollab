@@ -10,7 +10,7 @@
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}
 
-      <!-- <div class="input--field">
+      <div class="input--field">
         <p class="text--h7 text--medium gray-700">Email</p>
         <input class="field--l" type="email" name="email" placeholder="Enter email address" required>
         <p class="text--h7 text--medium red-500">{{ form.email.errors }}</p>
@@ -65,21 +65,10 @@
         <p class="text--h7 text--medium gray-700">Profile image</p>
         <input class="field--l" type="file" accept="image/*" name="profile_image" placeholder="Click to upload image">
         <p class="text--h7 text--medium red-500">{{ form.profile_image.errors }}</p>
-      </div> -->
-
-      <div class="input--field">
-        <p class="text--h7 text--medium gray-700">{{ field.label_tag }}</p> 
-        {{ field }}
-        {% if field.errors %}
-          {% for error in field.errors %}
-          <p class="text--h7 text--medium red-600">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
       </div>
-      {% endfor %}
 
       <div class="spacer--40"></div>
-
+      
       <button class="btn--fill--primary--l" id="signup_submit" type="submit">
         <p class="text--h7 text--medium gray-50">signup</p>
       </button>

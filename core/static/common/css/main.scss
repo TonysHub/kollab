@@ -574,6 +574,15 @@ input[type=file]::file-selector-button {
     padding: 10px 20px;
 }
 
+.field--textarea {
+    @include field;
+    height: 100px;
+    min-height: 100px;
+    max-height: 150px;
+    padding: 10px 20px;
+
+}
+
 @mixin col($value) {
     width: calc(100% / $value);
     height: fit-content;
