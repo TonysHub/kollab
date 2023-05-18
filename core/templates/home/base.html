@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  {% load static %}  
   {% include 'home/head.html' %}
-</head>
 <body>
 <header>
   <nav class="topnavbar">
@@ -10,7 +9,7 @@
       <div class="navbar-inner-container">
         <div class="navbar-logo-container">
           <a class="logobox" href="{% url 'home:home' %}">
-            <img src="static/common/img/icon_disc.svg" alt="Logo" width="48" height="48">
+            <img src= "{% static 'common/img/icon_disc.svg' %}" alt="Logo" width="48" height="48">
           </a>
         </div>
   

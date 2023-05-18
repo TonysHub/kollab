@@ -387,7 +387,7 @@ $yellow-900: #78350f;
 // layout styles
 .section--header {
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .section--body {
@@ -472,7 +472,6 @@ $yellow-900: #78350f;
     justify-content: flex-start; 
     align-items: center;
     gap: 4px;
-    transition: background-color .25s;
 
     &:hover {
         color: color.scale($textcolor, $blackness: 20%);
@@ -521,15 +520,14 @@ $yellow-900: #78350f;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 30px;
+    gap: 5px;
+    margin-bottom: 24px;
 }
-
 
 @mixin field {
     width: 100%;
     border-radius: 10px;
-    border: 2px solid $gray-300;
+    border: 2px solid $gray-200;
     cursor: pointer;
 
     &:hover {
@@ -546,11 +544,16 @@ $yellow-900: #78350f;
     }
 
     ::placeholder {
-        color: $gray-300;
+        color: $gray-200;
         font-size: 20px;
+        font-weight: 400;
         letter-spacing: -0.03em;
         line-height: 1.6;
     }
+}
+
+input[type=file]::file-selector-button {
+    border: none;
 }
 
 .field--s {
@@ -571,7 +574,41 @@ $yellow-900: #78350f;
     padding: 10px 20px;
 }
 
+@mixin col($value) {
+    width: calc(100% / $value);
+    height: fit-content;
+}
 
+@mixin input__col($value) {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: calc(3rem/$value);
+}
+
+.col--2 {
+    @include col(2)
+}
+
+.col--3 {
+    @include col(3)
+}
+
+.col--4 {
+    @include col(4)
+}
+
+.input__col-2 {
+    @include input__col(2)
+}
+
+.input__col-3 {
+    @include input__col(3)
+}
+
+.input__col-4 {
+    @include input__col(4)
+}
 
 // header styling
 .topnavbar {
@@ -633,6 +670,7 @@ $yellow-900: #78350f;
     height: 44px;
     display: flex;
     align-items: center;
+    transition: background-color 1s;
 
     a {
         width: fit-content;

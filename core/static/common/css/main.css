@@ -443,7 +443,7 @@ button {
 
 .section--header {
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 .section--body {
@@ -602,7 +602,6 @@ button {
   justify-content: flex-start;
   align-items: center;
   gap: 4px;
-  transition: background-color 0.25s;
 }
 .btn--text--primary:hover {
   color: #1c54c2;
@@ -624,7 +623,6 @@ button {
   justify-content: flex-start;
   align-items: center;
   gap: 4px;
-  transition: background-color 0.25s;
 }
 .btn--text--secondary:hover {
   color: #474c54;
@@ -641,14 +639,18 @@ button {
   height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 5px;
+  margin-bottom: 24px;
+}
+
+input[type=file]::file-selector-button {
+  border: none;
 }
 
 .field--s {
   width: 100%;
   border-radius: 10px;
-  border: 2px solid #cbd5e1;
+  border: 2px solid #e2e8f0;
   cursor: pointer;
   height: 40px;
   padding: 4px 20px;
@@ -664,14 +666,16 @@ button {
   color: #1e293b;
 }
 .field--s ::-moz-placeholder {
-  color: #cbd5e1;
+  color: #e2e8f0;
   font-size: 20px;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.6;
 }
 .field--s ::placeholder {
-  color: #cbd5e1;
+  color: #e2e8f0;
   font-size: 20px;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.6;
 }
@@ -679,7 +683,7 @@ button {
 .field--m {
   width: 100%;
   border-radius: 10px;
-  border: 2px solid #cbd5e1;
+  border: 2px solid #e2e8f0;
   cursor: pointer;
   height: 48px;
   padding: 8px 20px;
@@ -695,14 +699,16 @@ button {
   color: #1e293b;
 }
 .field--m ::-moz-placeholder {
-  color: #cbd5e1;
+  color: #e2e8f0;
   font-size: 20px;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.6;
 }
 .field--m ::placeholder {
-  color: #cbd5e1;
+  color: #e2e8f0;
   font-size: 20px;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.6;
 }
@@ -710,7 +716,7 @@ button {
 .field--l {
   width: 100%;
   border-radius: 10px;
-  border: 2px solid #cbd5e1;
+  border: 2px solid #e2e8f0;
   cursor: pointer;
   height: 54px;
   padding: 10px 20px;
@@ -726,16 +732,60 @@ button {
   color: #1e293b;
 }
 .field--l ::-moz-placeholder {
-  color: #cbd5e1;
+  color: #e2e8f0;
   font-size: 20px;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.6;
 }
 .field--l ::placeholder {
-  color: #cbd5e1;
+  color: #e2e8f0;
   font-size: 20px;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.6;
+}
+
+.col--2 {
+  width: 50%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.col--3 {
+  width: 33.3333333333%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.col--4 {
+  width: 25%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.input__col-2 {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.input__col-3 {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 1rem;
+}
+
+.input__col-4 {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 0.75rem;
 }
 
 .topnavbar {
@@ -799,6 +849,7 @@ button {
   height: 44px;
   display: flex;
   align-items: center;
+  transition: background-color 1s;
 }
 .navbar-item a {
   width: -moz-fit-content;
