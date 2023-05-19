@@ -9,7 +9,15 @@ class DateInput(forms.DateInput):
 class CampaignCreateForm(forms.ModelForm):
     class Meta:
         model = KollabCampaign
+        exclude = [
+            "business_id",
+            "is_active",
+            "created_at",
+            "updated_at",
+            "campaign_thumbnail_url",
+        ]
+        widgets = {
+            "start_date": DateInput(),
+            "end_date": DateInput(),
+        }
         fields = ("name", "description", "start_date", "end_date", "bid", "category")
-
-    def __init__(self, *args, **kwargs):
-        super(CampaignCreateForm,self).__init__(*args, **kwargs)
