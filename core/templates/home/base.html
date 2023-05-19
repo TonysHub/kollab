@@ -12,13 +12,11 @@
             <img src= "{% static 'common/img/icon_disc.svg' %}" alt="Logo" width="48" height="48">
           </a>
         </div>
-  
         <div class="navbar-menu">
           <li class="navbar-item">
             <a href="{% url 'campaign-home' %}" class="text--h7 text--medium gray--700">Campaign</a>
           </li>
         </div>
-
         <div class="navbar-content">
           {% if user.is_authenticated %}
           <li class="navbar-item">
