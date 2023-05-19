@@ -20,4 +20,3 @@ class CampaignCreateForm(forms.ModelForm):
             "start_date": DateInput(),
             "end_date": DateInput(),
         }
-        fields = ("name", "description", "start_date", "end_date", "bid", "category")
