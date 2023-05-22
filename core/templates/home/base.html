@@ -14,7 +14,7 @@
         </div>
         <div class="navbar-menu">
           <li class="navbar-item">
-            <a href="{% url 'campaign-home' %}" class="text--h7 text--medium gray--700">Campaign</a>
+            <a href="{% url 'campaign:campaign-home' %}" class="text--h7 text--medium gray--700">Campaign</a>
           </li>
         </div>
         <div class="navbar-content">
@@ -23,14 +23,14 @@
             <a href="#" class="text--h7 text--medium gray--700">User: {{ user.get_username }}</a>
           </li>
           <button class="btn--fill--primary--m">
-            <a href="{% url 'logout' %}?next={{ request.path }}" class="text--h7 text--medium gray-50">Logout</a>
+            <a href="{% url 'user:logout' %}?next={{ request.path }}" class="text--h7 text--medium gray-50">Logout</a>
           </button>
           {% else %}
           <li class="navbar-item">
-            <a href="{% url 'home:signup' %}" class="text--h7 text--medium gray--700">Sign up</a>
+            <a href="{% url 'user:signup' %}" class="text--h7 text--medium gray--700">Sign up</a>
           </li>
           <button class="btn--fill--primary--m">
-            <a href="{% url 'login' %}?next={{ request.path }}" class="text--h7 text--medium gray-50" role="button">Login</a>
+            <a href="{% url 'user:login' %}?next={{ request.path }}" class="text--h7 text--medium gray-50" role="button">Login</a>
           </button>
           {% endif %}
         </div>

@@ -20,7 +20,7 @@
   {% endif %}
   </div>
   <div class="section--body">
-    <form method="post" action="{% url 'login' %}">
+    <form method="post" action="{% url 'user:login' %}">
       {% csrf_token %}
 
 
@@ -45,7 +45,7 @@
     </form>
     <div class="spacer--20"></div>
     {# Assumes you setup the password_reset view in your URLconf #}
-    <button class="btn--text--secondary gray-500"><a href="{% url 'password_reset' %}">Lost password?</a></button>
+    <button class="btn--text--secondary gray-500"><a href="{% url 'user:password_reset' %}">Lost password?</a></button>
   </div>
 </div>
 {% endblock %}

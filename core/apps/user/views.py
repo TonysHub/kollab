@@ -1,7 +1,8 @@
-from django.shortcuts import HttpResponseRedirect
 from django.contrib.auth.views import LoginView
-from django.contrib.auth import login as auth_login, REDIRECT_FIELD_NAME
 from django.utils.http import url_has_allowed_host_and_scheme
+from django.views import generic
+from django.urls import reverse_lazy
+from .forms import SignUpForm
 
 class CustomLoginView(LoginView):
     template_name = "registration/login.html"
@@ -21,4 +22,13 @@ class CustomLoginView(LoginView):
             require_https=self.request.is_secure(),
         )
         return redirect_to if url_is_safe else ""
+    
+class SignUpView(generic.CreateView):
+    form_class = SignUpForm
+    template_name = "registration/signup.html"
+    success_url = reverse_lazy("login")
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
     
