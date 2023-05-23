@@ -14,7 +14,7 @@ class CampaignCreateForm(forms.ModelForm):
             "is_active",
             "created_at",
             "updated_at",
-            "campaign_thumbnail_url",
+            "thumbnail_url",
         ]
         widgets = {
             "start_date": DateInput(),

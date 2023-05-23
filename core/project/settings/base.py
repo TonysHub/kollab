@@ -58,7 +58,7 @@ WSGI_APPLICATION = "core.project.wsgi.application"
 AUTH_USER_MODEL = "user.KollabUser"
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
+    "django.contrib.auth.backends.ModelBackend",
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -85,13 +85,11 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_ROOT = "/static/"  
-STATICFILES_DIRS = (
-    (BASE_DIR / 'core/static'), # type: ignore
-)  
+STATIC_ROOT = "/static/"
+STATICFILES_DIRS = ((BASE_DIR / "core/static"),)  # type: ignore
 
 MEDIA_ROOT = BASE_DIR / "core/media"  # type: ignore
-
+# CAMPAIGN_MEDIA_ROOT = BASE_DIR / "core/media/campaign"  # type: ignore
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
@@ -99,4 +97,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = "/"
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
+# CAMPAIGN_MEDIA_URL = "/media/campaign/"
 ROOT_URLCONF = "core.project.urls"

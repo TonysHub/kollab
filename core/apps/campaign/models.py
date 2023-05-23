@@ -1,5 +1,6 @@
 from django.db import models
 from core.apps.business.models import KollabBusiness
+from django.conf import settings
 
 
 class KollabCampaign(models.Model):
@@ -13,21 +14,27 @@ class KollabCampaign(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     bid = models.DecimalField(max_digits=10, decimal_places=2)
-    campaign_thumbnail = models.ImageField(
-        upload_to="campaign/thumbnails", blank=True, null=True, default="campaign/thumbnails/default.png"
+    thumbnail = models.ImageField(
+        upload_to="campaign/thumbnails",
+        blank=True,
+        null=True,
+        default="campaign/thumbnails/default.png",
     )
-    campaign_thumbnail_url = models.CharField(
+    thumbnail_url = models.CharField(
         max_length=255, default="campaign/thumbnails/default.png"
     )
     category = models.CharField(max_length=100)
 
-    # exclude in CampaignCreateForm
-    business_id = models.ForeignKey(KollabBusiness, on_delete=models.CASCADE, db_column="business_id")
+    # Exclude in CampaignCreateForm
+    business_id = models.ForeignKey(
+        KollabBusiness, on_delete=models.CASCADE, db_column="business_id"
+    )
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def save(self, *args, **kwargs):
-        self.campaign_thumbnail_url = self.campaign_thumbnail.url
-        super().save(*args, **kwargs)
-
+    def save(self, thumbnail_url, **kwargs):
+        if self.thumbnail:
+            self.thumbnail_url = self.thumbnail.url
+            # self.save(update_fields=['thumbnail_url'])
+        super().save(thumbnail_url=self.thumbnail.url, **kwargs)

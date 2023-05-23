@@ -19,10 +19,18 @@ class KollabUser(AbstractUser):
     password = models.CharField(max_length=25, verbose_name="password")
     role = models.CharField(max_length=50, choices=Role.choices)
     creator_id = models.OneToOneField(
-        KollabCreator, on_delete=models.CASCADE, null=True, blank=True, db_column="creator_id"
+        KollabCreator,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        db_column="creator_id",
     )
     business_id = models.OneToOneField(
-        KollabBusiness, on_delete=models.CASCADE, null=True, blank=True, db_column="business_id"
+        KollabBusiness,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        db_column="business_id",
     )
     created = models.DateTimeField(auto_now_add=True)
     deleted = models.DateTimeField(null=True, blank=True)
@@ -30,7 +38,12 @@ class KollabUser(AbstractUser):
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
     is_active = models.BooleanField(default=True)
-    profile_image = models.ImageField(upload_to="user/profile", blank=True, null=True, default="user/profile/default.png")
+    profile_image = models.ImageField(
+        upload_to="user/profile",
+        blank=True,
+        null=True,
+        default="user/profile/default.png",
+    )
     profile_image_url = models.CharField(
         max_length=255, default="user/profile/default.png"
     )
