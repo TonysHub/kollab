@@ -1,5 +1,7 @@
 {% extends "home/base.html" %}
 {% load static %}
+
+{% block title %} Campaigns {% endblock %}
 {% block content%}
     <h1 class="text--t2 text--bold gray--900"> show my campaigns </h1>
     {% for campaign in campaigns %}
