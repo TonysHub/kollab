@@ -24,7 +24,7 @@ class CustomLoginView(LoginView):
         )
         return redirect_to if url_is_safe else ""
 
-
+      
 class SignUpView(generic.CreateView):
     form_class = SignUpForm
     template_name = "registration/signup.html"
@@ -33,3 +33,4 @@ class SignUpView(generic.CreateView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
+
