@@ -33,11 +33,6 @@ class KollabCampaign(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # def save(self, *args, **kwargs):
-    #     if self.thumbnail:
-    #         self.thumbnail_url = settings.CAMPAIGN_THUMBNAIL_URL + str(self.thumbnail)
-            
-    #     super().save(*args, **kwargs)
     def save(self, *args, **kwargs):
         self.campaign_thumbnail_url = self.campaign_thumbnail.url
         super().save(*args, **kwargs)
