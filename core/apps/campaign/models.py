@@ -36,3 +36,4 @@ class KollabCampaign(models.Model):
     def save(self, *args, **kwargs):
         self.thumbnail_url = self.thumbnail.url
         super().save(*args, **kwargs)
+
