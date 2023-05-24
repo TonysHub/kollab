@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %} Campaign Details {% endblock %}
+{% block content %}
+    <h1>{{ campaign.name}} </h1>
+    <img src="{% get_media_prefix %}{{ campaign.thumbnail }}" alt="image" width="300" height="300">
+    <p>{{ campaign.description }}</p>
+    <p>{{ campaign.start_date }}</p>
+    <p>{{ campaign.end_date }}</p>
+    <p>$ {{ campaign.bid }}</p>
+    <p>{{ campaign.category }}</p>
+
+{% endblock %}

@@ -29,3 +29,10 @@ class CampaignCreate(LoginRequiredMixin, CreateView):
         business_id = KollabUser.objects.get(pk=user_id).business_id
         form.instance.business_id = business_id
         return super().form_valid(form)
+
+
+class CampaignDetails(LoginRequiredMixin, TemplateView):
+    template_name = "campaign/campaign_details.html"
+    def get(self, request, pk):
+        campaign = KollabCampaign.objects.get(pk=pk)
+        return render(request, self.template_name, {'campaign': campaign})
