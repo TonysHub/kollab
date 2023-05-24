@@ -19,6 +19,14 @@
           <li class="navbar-item">
             <a href="{% url 'campaign:campaign-home' %}" class="text--h7 text--medium gray--700">Campaign</a>
           </li>
+          {% if user.is_authenticated and user.role == "BUSINESS" %}
+          <li class="navbar-item">
+            <a href="{% url 'campaign:campaign-create' %}" class="text--h7 text--medium gray--700">Create Campaign</a>
+          </li>
+          <li class="navbar-item">
+            <a href="{% url 'business:business-dashboard' %}" class="text--h7 text--medium gray--700">Dashboard</a>
+          </li>
+          {% endif %}
         </div>
         <div class="navbar-content">
           {% if user.is_authenticated %}
