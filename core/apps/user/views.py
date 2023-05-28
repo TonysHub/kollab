@@ -33,4 +33,9 @@ class SignUpView(generic.CreateView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
-
+    
+    def form_invalid(self, form):
+            for field in form.visible_fields():
+                if field.errors:
+                    field.errors.clear()
+            return self.render_to_response(self.get_context_data(form=form))
