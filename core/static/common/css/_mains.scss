@@ -1,0 +1,92 @@
+/**
+ * Containers 
+ * Make defualt layout for basic containers. 
+ * Customize sizes are made with calc(var() * n) 
+ */
+
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+main {
+    flex: 1;
+  }
+  
+.section {
+    padding: calc(var(--grid-mega) * 2) 0;
+  }
+  
+.container {
+    max-width: var(--grid-page-width);
+    margin: 0 auto;
+  }
+
+// common styles across nav, header, and footer
+nav, .header, .footer {
+    color: var(--color-gray-1100);
+  
+    a:not(.Button) {
+      color: var(--color-gray-1100);
+      text-decoration: none;
+  
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
+  }
+
+
+// Navigation
+nav {
+    padding: var(--grid-micro) var(--grid-large);
+    width: 100%;
+    height: 64px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--color-gray-300);
+  }
+  
+.nav-title { 
+    flex-shrink: 0;
+  }
+  
+// # is used for ID selectors.
+#nav-menu,
+#nav-tool {
+  margin: 0;
+  padding: 0;
+  li {
+      display: inline-block;
+      margin-left: var(--grid-xsmall);
+  }
+  a {
+      padding: var(--grid-small) var(--grid-small);
+      border-radius: var(--border-radius-medium);
+
+      &:hover {
+        background-color: var(--color-gray-50);
+      }
+  }
+}
+  
+/* Headers */
+.header, .footer {
+    padding: var(--grid-large) 0;
+}
+
+.header {
+    padding-top: calc(var(--grid-mega) * 2);
+}
+
+
+/* Media queries */
+@media (max-width: 1236px) {
+    .container {
+      margin: 0 var(--grid-mega);
+    }
+}

@@ -1,0 +1,13 @@
+/** 
+ *  use @import to link stylesheet. style.scss will only be compiled to css files.
+ *  stylesheet for frequently used components will be made individually.
+**/ 
+@charset "UTF-8";
+
+// core style and base components
+@import 'core';
+@import 'components';
+
+
+// custom style and overrides
+@import 'mains';

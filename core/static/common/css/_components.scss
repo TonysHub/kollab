@@ -1,0 +1,101 @@
+/** 
+ *  This file is stylesheet for frequently used components
+ *  Button, Fields, Selectors will be defined in this file.
+**/ 
+@import 'layout';
+
+/* Fields */
+input,
+[type=text],
+[type=textarea],
+[type=password],
+[type=email],
+[type=file] {
+  &::placeholder {
+    color: var(--color-gray-500);
+    font-size: var(--font-size-headline-2);
+    font-weight: var(--font-weight-medium);
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+input[type=file]::file-selector-button {
+  display: none;
+}
+
+.input--field {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 24px;
+}
+
+.field-group {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    label {
+        color: var(--color-gray-900);
+        font-size: var(--font-size-headline-2);
+        font-weight: var(--font-weight-semibold);
+        padding: var(--grid-xxsmall) 0;
+    }
+    p {
+        color: var(--color-red-500);
+        font-size: var(--font-size-headline-2);
+        font-weight: var(--font-weight-medium);
+        padding: var(--grid-xxsmall) 0;
+    }
+}
+
+@mixin field {
+  width: 100%;
+  border-radius: var(--border-radius-medium);
+  border: 2px solid var(--color-gray-200);
+  font-size: var(--font-size-headline-2);
+  color: var(--color-gray-1100);
+
+  &:hover {
+      border: 2px solid var(--color-blue-300);
+  }
+
+  &:focus {
+      border: 2px solid var(--color-blue-500);
+  }
+}
+
+
+.field--small {
+  @include field;
+  height: 40px;
+  padding: 4px 20px;
+}
+
+.field--medium {
+  @include field;
+  height: 48px;
+  padding: 8px 20px;
+}
+
+.field--large {
+  @include field;
+  height: 54px;
+  padding: 10px 20px;
+}
+
+.field--xlarge {
+  @include field;
+  height: 100px;
+  min-height: 100px;
+  max-height: 150px;
+  padding: 10px 20px;
+
+}
+
