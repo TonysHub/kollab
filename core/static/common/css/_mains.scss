@@ -4,7 +4,7 @@
  * Customize sizes are made with calc(var() * n) 
  */
 
- body {
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -24,11 +24,11 @@ main {
   }
 
 // common styles across nav, header, and footer
-nav, .header, .footer {
-    color: var(--color-gray-1100);
+nav, .footer {
+    color: var(--color-gray-700);
   
     a:not(.Button) {
-      color: var(--color-gray-1100);
+      color: var(--color-gray-700);
       text-decoration: none;
   
       &:hover, &:active {
@@ -40,7 +40,7 @@ nav, .header, .footer {
 
 // Navigation
 nav {
-    padding: var(--grid-micro) var(--grid-large);
+    padding: 0 var(--grid-large);
     width: 100%;
     height: 64px;
     z-index: 2;
@@ -53,7 +53,15 @@ nav {
   
 .nav-title { 
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
   }
+
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: var(--grid-medium);
+}
   
 // # is used for ID selectors.
 #nav-menu,
@@ -62,11 +70,12 @@ nav {
   padding: 0;
   li {
       display: inline-block;
-      margin-left: var(--grid-xsmall);
+      margin-left: var(--grid-xxsmall);
   }
   a {
-      padding: var(--grid-small) var(--grid-small);
+      padding: var(--grid-small) var(--grid-xsmall);
       border-radius: var(--border-radius-medium);
+      transition: all 0.1s ease-in-out;
 
       &:hover {
         background-color: var(--color-gray-50);
@@ -76,7 +85,7 @@ nav {
   
 /* Headers */
 .header, .footer {
-    padding: var(--grid-large) 0;
+    padding: calc(var(--grid-mega) * 1.2) 0;
 }
 
 .header {

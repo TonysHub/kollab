@@ -8,23 +8,23 @@
 <body>
   <nav>
     <div class="nav-title">
-        <a class="logobox" href="{% url 'home:home' %}">
-          <img src= "{% static 'common/img/icon_disc.svg' %}" alt="Logo" width="48px" height="48px">
+        <a class="nav-logo-container" href="{% url 'home:home' %}">
+          <img src= "{% static 'common/img/logo_collaberr.png' %}" alt="Collaberr" width="130px" height="auto">
         </a>
+        <ul id="nav-menu">
+          <li>
+            <a href="{% url 'campaign:campaign-home' %}">Campaign</a>
+          </li>
+          {% if user.is_authenticated and user.role == "BUSINESS" %}
+          <li>
+            <a href="{% url 'campaign:campaign-create' %}">Create Campaign</a>
+          </li>
+          <li>
+            <a href="{% url 'business:business-dashboard' %}">Dashboard</a>
+          </li>
+          {% endif %}
+        </ul>
     </div>
-    <ul id="nav-menu">
-      <li>
-        <a href="{% url 'campaign:campaign-home' %}">Campaign</a>
-      </li>
-      {% if user.is_authenticated and user.role == "BUSINESS" %}
-      <li>
-        <a href="{% url 'campaign:campaign-create' %}">Create Campaign</a>
-      </li>
-      <li>
-        <a href="{% url 'business:business-dashboard' %}">Dashboard</a>
-      </li>
-      {% endif %}
-    </ul>
     <ul id="nav-tool">
       {% if user.is_authenticated %}
       <li>

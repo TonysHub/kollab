@@ -3,45 +3,39 @@
 {% block content %}  
 
 <div class="container--600">
-  <div class="spacer--80"></div>
-  <div class="section--header">
-    <div class="text--h2 text--bold gray-900">Log In</div>
-    <div class="spacer--20"></div>
+  <div class="header">
+    <h1>Log In</h1>
+    <div class="spacer--12"></div>
     {% if form.errors %}
-      <p class="text--h7 text--medium red-600">Your username and password didn't match.<br/>Please try again.</p>
+      <p>Your username and password didn't match.<br/>Please try again.</p>
     {% endif %}
   
     {% if next %}
     {% if user.is_authenticated %}
-      <p class="text--h7 text--medium red-600">Your account doesn't have access to this page.<br/>To proceed, please login with an account that has access.</p>
+      <p>Your account doesn't have access to this page.<br/>To proceed, please login with an account that has access.</p>
     {% else %}
-      <p class="text--h7 text--medium gray-500">Please login to see this page.</p>
+      <p>Please login to see this page.<p>
     {% endif %}
   {% endif %}
   </div>
-  <div class="section--body">
+  <div>
     <form method="post" action="{% url 'user:login' %}">
       {% csrf_token %}
-
-
-      <div class="input--field">
-        <p class="text--h7 text--medium gray-700">User name</p>
-        <input class="field--l" type="text" name="username" placeholder="Enter username" required>
-        <p class="text--h7 text--medium red-500">{{ form.username.errors }}</p>
+      <div class="field-group">
+        <label id="loginName">User name</label>
+        <input class="field--l" id="loginName" type="text" name="username" placeholder="Enter username" required>
+        <p>{{ form.username.errors }}</p>
       </div>
-
-      <div class="input--field">
-        <p class="text--h7 text--medium gray-700">Password</p>
-        <input class="field--l" type="password" name="password" placeholder="Enter password" required>
-        <p class="text--h7 text--medium red-500">{{ form.password1.errors }}</p>
+      <div class="spacer--24"></div>
+      <div class="field-group">
+        <label id="loginPw">Password</label>
+        <input class="field--l" id="loginPw" type="password" name="password" placeholder="Enter password" required>
+        <p>{{ form.password1.errors }}</p>
       </div>
-
       <div class="spacer--40"></div>
-
       <button class="btn--fill--primary--l" id="login_submit" type="submit">
         <p class="text--h7 text--medium gray-50">Login</p>
       </button>
-
     </form>
     <div class="spacer--20"></div>
     {# Assumes you setup the password_reset view in your URLconf #}

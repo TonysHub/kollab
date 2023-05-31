@@ -541,13 +541,13 @@
       --font-weight-bold: 700;
       --font-weight-heavy: 800;
     }
-    
+
     /* Typefaces */
     @font-face {
-        font-family: 'Pretendard';
-        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-        font-weight: 400;
-        font-style: normal;
+      font-family: "Pretendard-Regular";
+      src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
     }
     
     /* Typography class names */
@@ -622,26 +622,28 @@
 /* Body text */
 html {
     font-size: 20px;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    letter-spacing: -0.04em;
   }
-  body {
-    color: var(--color-text-primary);
-    font-size: var(--font-size-body);
-    line-height: var(--line-height-body);
-  }
-  a {
-    color: var(--color-text-link);
-    text-decoration: none;
-  }
+body {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
 
   /* Headings */
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6 {
-//     font-family: var(--font-family-base);
-//   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-base);
+  }
   h1 {
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-title-1);

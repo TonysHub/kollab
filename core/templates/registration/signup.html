@@ -2,69 +2,68 @@
 {% block title %} Sign Up {% endblock %}
 {% block content %}
 <div class="container--600">
-  <div class="spacer--80"></div>
-  <div class="section--header">
-    <div class="text--h2 text--bold gray-900">Sign up</div>
+  <div class="header">
+    <h1>Sign up</h1>
   </div>
-  <div class="section--body">
+  <div>
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}
 
-      <div class="input--field">
-        <p class="text--h7 text--medium gray-700">Email</p>
-        <input class="field--l" type="email" name="email" placeholder="Enter email address" required>
-        <p class="text--h7 text--medium red-500">{{ form.email.errors }}</p>
+      <div class="field-group">
+        <label for="userID">Email</label>
+        <input class="field--large" id="userID" type="email" name="email" placeholder="Enter email address" required>
+        <p>{{ form.email.errors }}</p>
       </div>
       
       <div class="input__col-2">
-        <div class="input--field col--2">
-          <p class="text--h7 text--medium gray-700">First name</p>
-          <input class="field--l" type="text" name="first_name" placeholder="Enter first name" required>
-          <p class="text--h7 text--medium red-500">{{ form.first_name.errors }}</p>
+        <div class="field-group col--2">
+          <label for="userFirstName">First name</label>
+          <input class="field--large" id="userFirstName" type="text" name="first_name" placeholder="Enter first name" required>
+          <p>{{ form.first_name.errors }}</p>
         </div>
   
-        <div class="input--field col--2">
-          <p class="text--h7 text--medium gray-700">Last name</p>
-          <input class="field--l" type="text" name="last_name" placeholder="Enter last name" required>
-          <p class="text--h7 text--medium red-500">{{ form.last_name.errors }}</p>
+        <div class="field-group col--2">
+          <label for="userLastName">Last name</label>
+          <input class="field--large" id="userLastName" type="text" name="last_name" placeholder="Enter last name" required>
+          <p>{{ form.last_name.errors }}</p>
         </div>
       </div>
 
       <div class="spacer--40"></div>
 
-      <div class="input--field">
-        <p class="text--h7 text--medium gray-700">User name</p>
-        <input class="field--l" type="text" name="username" placeholder="Enter username" required>
-        <p class="text--h7 text--medium red-500">{{ form.username.errors }}</p>
+      <div class="field-group">
+        <label for="userName">User name</label>
+        <input class="field--large" id="userName" type="text" name="username" placeholder="Enter username" required>
+        <p>{{ form.username.errors }}</p>
       </div>
 
-      <div class="input--field">
-        <p class="text--h7 text--medium gray-700">Password</p>
-        <input class="field--l" type="password" name="password1" placeholder="Enter password" required>
-        <p class="text--h7 text--medium red-500">{{ form.password1.errors }}</p>
+      <div class="field-group">
+        <label for="loginPw">Password</label>
+        <input class="field--large" id="loginPw" type="password" name="password1" placeholder="Enter password" required>
+        <p>{{ form.password1.errors }}</p>
       </div>
 
-      <div class="input--field">
-        <p class="text--h7 text--medium gray-700">Password confirm</p>
-        <input class="field--l" type="password" name="password2" placeholder="Enter password again" required>
-        <p class="text--h7 text--medium red-500">{{ form.password2.errors }}</p>
+      <div class="field-group">
+        <label for="loginPwConfirm">Password confirm</label>
+        <input class="field--large" id="loginPwConfirm" type="password" name="password2" placeholder="Enter password again" required>
+        <p>{{ form.password2.errors }}</p>
       </div>
 
       <div class="spacer--40"></div>
 
-      <div class="input--field">
-        <p class="text--h7 text--medium gray-700">Role</p>
-        <select class="field--l" name="role" required>
+      <div class="field-group">
+        <label for="userRole">Role</label>
+        <select class="field--large" id="userRole" name="role" required>
           <option value="CREATOR">Creator</option>
           <option value="BUSINESS">Business</option>
         </select>
-        <p class="text--h7 text--medium red-500">{{ form.role.errors }}</p>
+        <p>{{ form.role.errors }}</p>
       </div>
 
-      <div class="input--field">
-        <p class="text--h7 text--medium gray-700">Profile image</p>
-        <input class="field--l" type="file" accept="image/*" name="profile_image" placeholder="Click to upload image">
-        <p class="text--h7 text--medium red-500">{{ form.profile_image.errors }}</p>
+      <div class="field-group">
+        <label for="userProfileImg">Profile image</label>
+        <input class="field--large" id="userProfileImg" type="file" accept="image/*" name="profile_image" placeholder="Click to upload image">
+        <p>{{ form.profile_image.errors }}</p>
       </div>
 
       <div class="spacer--40"></div>

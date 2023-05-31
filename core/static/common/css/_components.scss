@@ -5,6 +5,10 @@
 @import 'layout';
 
 /* Fields */
+textarea {
+    resize: none;
+  }
+
 input,
 [type=text],
 [type=textarea],
@@ -13,13 +17,9 @@ input,
 [type=file] {
   &::placeholder {
     color: var(--color-gray-500);
-    font-size: var(--font-size-headline-2);
+    font-size: var(--font-size-body);
     font-weight: var(--font-weight-medium);
   }
-}
-
-textarea {
-  resize: none;
 }
 
 input[type=file]::file-selector-button {
@@ -43,13 +43,13 @@ input[type=file]::file-selector-button {
 
     label {
         color: var(--color-gray-900);
-        font-size: var(--font-size-headline-2);
+        font-size: var(--font-size-body);
         font-weight: var(--font-weight-semibold);
         padding: var(--grid-xxsmall) 0;
     }
     p {
         color: var(--color-red-500);
-        font-size: var(--font-size-headline-2);
+        font-size: var(--font-size-body);
         font-weight: var(--font-weight-medium);
         padding: var(--grid-xxsmall) 0;
     }
@@ -59,7 +59,7 @@ input[type=file]::file-selector-button {
   width: 100%;
   border-radius: var(--border-radius-medium);
   border: 2px solid var(--color-gray-200);
-  font-size: var(--font-size-headline-2);
+  font-size: var(--font-size-body);
   color: var(--color-gray-1100);
 
   &:hover {
