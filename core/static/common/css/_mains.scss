@@ -27,7 +27,7 @@ main {
 nav, .footer {
     color: var(--color-gray-700);
   
-    a:not(.Button) {
+    a:not(.button) {
       color: var(--color-gray-700);
       text-decoration: none;
   
@@ -72,7 +72,7 @@ nav {
       display: inline-block;
       margin-left: var(--grid-xxsmall);
   }
-  a {
+  a:not(.button) {
       padding: var(--grid-small) var(--grid-xsmall);
       border-radius: var(--border-radius-medium);
       transition: all 0.1s ease-in-out;

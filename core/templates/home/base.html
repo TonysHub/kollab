@@ -37,7 +37,11 @@
       <li>
         <a href="{% url 'user:signup' %}">Sign up</a>
       </li>
-        <a href="{% url 'user:login' %}?next={{ request.path }}" role="button">Login</a>
+      <li>
+        <button>
+          <a class="button button--primaryFill button--small" href="{% url 'user:login' %}?next={{ request.path }}" role="button">Login</a>
+        </button>
+      </li>
       {% endif %}
     </ul>
   </nav>
