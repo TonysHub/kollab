@@ -178,3 +178,25 @@ textarea {
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-normal);
 }
+
+/* Chips */
+@mixin chip {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chip--gray {
+  @include chip;
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+// Chip size
+.chip--small {
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--border-radius-medium);
+  font-size: var(--font-size-subtext-1);
+  font-weight: var(--font-weight-normal);
+}

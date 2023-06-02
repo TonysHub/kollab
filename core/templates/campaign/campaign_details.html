@@ -2,12 +2,25 @@
 {% load static %}
 {% block title %} Campaign Details {% endblock %}
 {% block content %}
-    <h1>{{ campaign.name}} </h1>
-    <img src="{% get_media_prefix %}{{ campaign.thumbnail }}" alt="image" width="300" height="300">
-    <p>{{ campaign.description }}</p>
-    <p>{{ campaign.start_date }}</p>
-    <p>{{ campaign.end_date }}</p>
-    <p>$ {{ campaign.bid }}</p>
-    <p>{{ campaign.category }}</p>
-
+    <div class="container--600">
+        <div class="header">
+            <div class="campaignView-imgbox">
+                <img src="{% get_media_prefix %}{{ campaign.thumbnail }}" onerror="this.onerror=null; this.src='{% static 'common/img/img_nullimg.png' %}';" alt="image">
+            </div>
+        </div>
+        <p class="campaignView-category">{{ campaign.category }}</p>
+        <h2 class="camapaignView-name text-headline-1">{{ campaign.name}}</h2>
+        <p class="campaignView-date">{{ campaign.start_date }} - {{ campaign.end_date }}</p>
+        <div class="campaignView-description">
+            <p>{{ campaign.description }}</p>
+        </div>
+        <div class="spacer--80"></div>
+        <div class="campaignView-bid">
+            <h3>$ {{ campaign.bid }}</h3>
+            <button>
+            <a class="button button--primaryFill button--small" href="#" role="button">Join campaign</a>
+            </button>
+        </div>
+        <div class="spacer--80"></div>
+    </div>
 {% endblock %}

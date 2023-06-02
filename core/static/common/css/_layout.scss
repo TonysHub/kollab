@@ -29,6 +29,14 @@
     margin: 0 auto;
 }
 
+.container--1080 {
+    width: 100%;
+    max-width: 1080px;
+    height: fit-content;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
 .container--max {
     width: 100%;
     max-width: 1280px;
