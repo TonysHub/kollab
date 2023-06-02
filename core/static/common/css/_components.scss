@@ -19,12 +19,19 @@ input,
   &::placeholder {
     color: var(--color-gray-500);
     font-size: var(--font-size-body);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-normal);
   }
 }
 
 input[type=file]::file-selector-button {
   display: none;
+}
+
+input,
+textarea {
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 // Fields
@@ -44,13 +51,13 @@ input[type=file]::file-selector-button {
     flex-direction: column;
 
     label {
-        color: var(--color-gray-700);
+        color: var(--color-gray-800);
         font-size: var(--font-size-body);
         font-weight: var(--font-weight-medium);
         padding: var(--grid-xxsmall) 0;
     }
     p {
-        color: var(--color-red-500);
+        color: var(--color-red-800);
         font-size: var(--font-size-body);
         font-weight: var(--font-weight-medium);
         padding: var(--grid-xxsmall) 0;
@@ -60,19 +67,22 @@ input[type=file]::file-selector-button {
 @mixin field {
   width: 100%;
   border-radius: var(--border-radius-medium);
-  border: 2px solid var(--color-gray-200);
+  border: 2px solid var(--color-gray-300);
   font-size: var(--font-size-body);
-  color: var(--color-gray-700);
+  color: var(--color-gray-800);
 
   &:hover {
-      border: 2px solid var(--color-blue-300);
+      border: 2px solid var(--color-blue-400);
   }
 
   &:focus {
-      border: 2px solid var(--color-blue-500);
+      border: 2px solid var(--color-blue-600);
+  }
+
+  &:focus-visible {
+    border: 2px solid var(--color-blue-600);
   }
 }
-
 
 .field--small {
   @include field;
@@ -130,7 +140,7 @@ input[type=file]::file-selector-button {
 .button--primaryFill {
   @include button-fill;
   color: white;
-  background-color: var(--color-blue-600);
+  background-color: var(--color-blue-700);
 
   &:not(:disabled):hover {
     background-color: var(--color-blue-900);
@@ -139,11 +149,11 @@ input[type=file]::file-selector-button {
 
 .button--dangerFill {
   @include button-fill;
-  color: var(--color-red-500);
-  background-color: var(--color-red-100);
+  color: var(--color-red-600);
+  background-color: var(--color-red-200);
 
   &:not(:disabled):hover {
-    background-color: var(--color-red-200);
+    background-color: var(--color-red-400);
   }
 }
 
@@ -159,12 +169,12 @@ input[type=file]::file-selector-button {
   padding: var(--space-24) var(--space-40);
   border-radius: var(--border-radius-large);
   font-size: var(--font-size-headline-2);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-normal);
 }
 
 .button--small {
   padding: var(--space-16) var(--space-20);
   border-radius: var(--border-radius-medium);
   font-size: var(--font-size-body);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-normal);
 }

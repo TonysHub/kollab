@@ -31,7 +31,9 @@
         <a href="#">User: {{ user.get_username }}</a>
       </li>
       <li>
-          <a href="{% url 'user:logout' %}?next={{ request.path }}">Logout</a>
+        <button>
+          <a class="button button--dangerFill button--small" href="{% url 'user:logout' %}?next={{ request.path }}">Logout</a>
+        </button>
       </li>
       {% else %}
       <li>
@@ -48,7 +50,8 @@
 
   {% block content %}
   {% endblock %}
-  
+  <div class="footer">
+  </div>
 </body>
 </html>
 

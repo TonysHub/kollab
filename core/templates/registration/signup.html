@@ -15,14 +15,14 @@
         <p>{{ form.email.errors }}</p>
       </div>
       
-      <div class="input__col-2">
-        <div class="field-group col--2">
+      <div class="col-2">
+        <div class="field-group">
           <label for="userFirstName">First name</label>
           <input class="field--large" id="userFirstName" type="text" name="first_name" placeholder="Enter first name" required>
           <p>{{ form.first_name.errors }}</p>
         </div>
   
-        <div class="field-group col--2">
+        <div class="field-group">
           <label for="userLastName">Last name</label>
           <input class="field--large" id="userLastName" type="text" name="last_name" placeholder="Enter last name" required>
           <p>{{ form.last_name.errors }}</p>
@@ -69,5 +69,6 @@
       <button class="button button--primaryFill" id="signup_submit" type="submit">Signup</button>
     </form>
   </div>
+  <div class="spacer--80"></div>
 </div>
 {% endblock %}

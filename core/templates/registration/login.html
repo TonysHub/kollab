@@ -22,14 +22,14 @@
     <form method="post" action="{% url 'user:login' %}">
       {% csrf_token %}
       <div class="field-group">
-        <label id="loginName">User name</label>
-        <input class="field--l" id="loginName" type="text" name="username" placeholder="Enter username" required>
+        <label for="loginName">User name</label>
+        <input class="field--large" id="loginName" type="text" name="username" placeholder="Enter username" required>
         <p>{{ form.username.errors }}</p>
       </div>
       <div class="spacer--24"></div>
       <div class="field-group">
-        <label id="loginPw">Password</label>
-        <input class="field--l" id="loginPw" type="password" name="password" placeholder="Enter password" required>
+        <label for="loginPw">Password</label>
+        <input class="field--large" id="loginPw" type="password" name="password" placeholder="Enter password" required>
         <p>{{ form.password1.errors }}</p>
       </div>
       <div class="spacer--40"></div>
@@ -37,7 +37,12 @@
     </form>
     <div class="spacer--20"></div>
     {# Assumes you setup the password_reset view in your URLconf #}
-    <button class="btn--text--secondary gray-500"><a href="{% url 'user:password_reset' %}">Lost password?</a></button>
+    <div class="link-group">
+      <a href="{% url 'user:signup' %}">I'm new</a>
+      <span>|</span>
+      <a href="{% url 'user:password_reset' %}">Lost password?</a>
+    </div>
   </div>
+  <div class="spacer--80"></div>
 </div>
 {% endblock %}

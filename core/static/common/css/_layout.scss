@@ -25,6 +25,7 @@
     width: 100%;
     max-width: 600px;
     height: fit-content;
+    min-height: 100vh;
     margin: 0 auto;
 }
 
@@ -32,6 +33,7 @@
     width: 100%;
     max-width: 1280px;
     height: fit-content;
+    min-height: 100vh;
     margin: 0 auto;
 }
 
@@ -79,3 +81,28 @@
 
 
 /* Grids */
+@mixin col($value) {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: calc(3rem/$value);
+  }
+  
+  .col-2 {
+    @include col(2)
+  }
+  
+  .col-3 {
+    @include col(3)
+  }
+  
+  .col-4 {
+    @include col(4)
+  }
+
+/* Alignments */
+.flex--center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}

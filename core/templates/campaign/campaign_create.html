@@ -20,13 +20,13 @@
           <p>{{ form.description.errors }}</p>
         </div>
         <div class="spacer--24"></div>
-        <div class="input__col-2">
-          <div class="field-group col--2">
+        <div class="col-2">
+          <div class="field-group">
             <label for="campaignStartsAt">Starting date</label>
             <input class="field--large" id="campaignStartsAt" type="date" name="start_date" placeholder="Select starting date" required>
             <p>{{ form.start_date.errors }}</p>
           </div> 
-          <div class="field-group col--2">
+          <div class="field-group">
             <label for="campaignEndsAt">End date</label>
             <input class="field--large" id="campaignEndsAt" type="date" name="end_date" placeholder="Select end date" required>
             <p>{{ form.end_date.errors }}</p>
@@ -54,5 +54,6 @@
         <button class="button button--primaryFill" id="campaignCreate_submit" type="submit">Register</button>
       </form>
     </div>
+    <div class="spacer--80"></div>
   </div>
 {% endblock %}
